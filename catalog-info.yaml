@@ -11,7 +11,7 @@ spec:
   type: asyncapi
   lifecycle: experimental
   owner: coe-integracoes
-  definitions:
+  definition:
     asyncapi:
       $text: ./asyncapi/financial-contract-activated.yaml
     schemas:
@@ -34,7 +34,7 @@ spec:
   type: asyncapi
   lifecycle: experimental
   owner: coe-integracoes
-  definitions:
+  definition:
     asyncapi:
       $text: ./asyncapi/financial-contract-activated-processed.yaml
     schemas:
