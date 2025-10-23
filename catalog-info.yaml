@@ -16,9 +16,9 @@ spec:
       $text: ./asyncapi/financial-contract-activated.yaml
     schemas:
       value:
-        $text: ./schemas/financial-contract-activated-value.json
+        $text: ./schemas/financial-contract-activated-value.avsc
       key:
-        $text: ./schemas/financial-contract-activated-key.json
+        $text: ./schemas/financial-contract-activated-key.avsc
 
 ---
 apiVersion: backstage.io/v1alpha1
@@ -39,6 +39,6 @@ spec:
       $text: ./asyncapi/financial-contract-activated-processed.yaml
     schemas:
       value:
-        $text: ./schemas/financial-contract-activated-processed-value.json
+        $text: ./schemas/financial-contract-activated-processed-value.avsc
       key:
-        $text: ./schemas/financial-contract-activated-processed-key.json
+        $text: ./schemas/financial-contract-activated-processed-key.avsc
