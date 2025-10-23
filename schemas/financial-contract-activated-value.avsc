@@ -1,0 +1,107 @@
+{
+  "connect.name": "br.com.cogna.FinancialContractActivatedValue",
+  "doc": "{\"description\": \"Este evento representa o retorno do Gestor de Ativação após validação dos dados de pagamento para efetivação da ativação de contrato financeiro.\",\"topic\":\"financial-contract-activated\",\"author_team\":\"Backbone\",\"author_name\":\"Dennis Policiano\",\"support_email\":\"integracoes.sistemas@cogna.com.br\",\"support_name\":\"Backbone\"}",
+  "fields": [
+    {
+      "doc": "Sistema de origem",
+      "name": "system",
+      "type": "string"
+    },
+    {
+      "doc": "Matrícula",
+      "name": "programEnrollment",
+      "type": {
+        "doc": "Estrutura do Objeto de Matrícula",
+        "fields": [
+          {
+            "doc": "Chave de negócio da matrícula (RA) do contato de um aluno no curso",
+            "name": "businessKey",
+            "type": "string"
+          }
+        ],
+        "name": "programEnrollment_FinancialContractActivated",
+        "type": "record"
+      }
+    },
+    {
+      "doc": "BusinessKey do Aluno (CPF)",
+      "name": "studentContact",
+      "type": {
+        "fields": [
+          {
+            "doc": "Chave de negócio do contato",
+            "name": "contactBusinessKey",
+            "type": "string"
+          },
+          {
+            "default": "BR_CPF",
+            "doc": "Tipo de chave de negócio do contato",
+            "name": "contactBusinessKeyType",
+            "type": {
+              "name": "contactBusinessKeyTypeFinancialContractActivated",
+              "symbols": [
+                "BR_CPF"
+              ],
+              "type": "enum"
+            }
+          }
+        ],
+        "name": "studentContactFinancialContractActivated",
+        "type": "record"
+      }
+    },
+    {
+      "doc": "Duração em meses",
+      "name": "duration",
+      "type": "int"
+    },
+    {
+      "default": null,
+      "doc": "Quantidades de mensalidades a serem faturadas por matrícula tardia",
+      "name": "installmentsToBill",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "doc": "Tipo de Operação - Enum: 'CRIACAO', 'TRANSFERENCIA_INTERNA'",
+      "name": "type",
+      "type": {
+        "name": "type_FinancialContractActivated",
+        "symbols": [
+          "CRIACAO",
+          "TRANSFERENCIA_INTERNA"
+        ],
+        "type": "enum"
+      }
+    },
+    {
+      "doc": "BusinessKey da Cotação Financeira vinculada",
+      "name": "quotationBusinessKey",
+      "type": "string"
+    },
+    {
+      "doc": "Unix epoch da data e hora de início das aulas/estudos",
+      "name": "termStartDate",
+      "type": {
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "connect.version": 1,
+        "logicalType": "timestamp-millis",
+        "type": "long"
+      }
+    },
+    {
+      "default": null,
+      "doc": "Quantidade de mensalidades isentas",
+      "name": "exemptEnrollmentInstallments",
+      "type": [
+        "null",
+        "int"
+      ]
+    }
+  ],
+  "name": "FinancialContractActivatedValue",
+  "namespace": "br.com.cogna",
+  "type": "record"
+}

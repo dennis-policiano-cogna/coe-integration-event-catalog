@@ -1,0 +1,14 @@
+{
+  "connect.name": "br.com.cogna.FinancialContractActivatedProcessedKey",
+  "doc": "DESCRIPTION: Este evento representa o resultado do processamento do retorno do Gestor de Ativação após validação dos dados de pagamento para efetivação da ativação de contrato financeiro. TOPIC: financial-contract-activated-processed. AUTHOR_TEAM: Stream Team.  AUTHOR_E-MAIL: streamteam@cogna.com.br. SUPPORT_NAME: Stream Team.   SUPORT_EMAIL: streamteam@cogna.com.br. SUPPORT_PHONE: ---. SCHEMA_CONTEXT: br.com.cogna.",
+  "fields": [
+    {
+      "doc": "Identificador único do evento",
+      "name": "id",
+      "type": "string"
+    }
+  ],
+  "name": "FinancialContractActivatedProcessedKey",
+  "namespace": "br.com.cogna",
+  "type": "record"
+}

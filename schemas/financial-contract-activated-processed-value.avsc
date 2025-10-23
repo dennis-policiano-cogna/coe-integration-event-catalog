@@ -1,0 +1,98 @@
+{
+  "connect.name": "br.com.cogna.FinancialContractActivatedProcessedValue",
+  "doc": "{\"description\": \"Este evento representa o retorno do processamento da ativação de contrato financeiro.\",\"topic\":\"financial-contract-activated-processed\",\"author_team\":\"Backbone\",\"author_name\":\"Dennis Policiano\",\"support_email\":\"integracoes.sistemas@cogna.com.br\",\"support_name\":\"Backbone \"}",
+  "fields": [
+    {
+      "doc": "Sistema de origem",
+      "name": "system",
+      "type": "string"
+    },
+    {
+      "doc": "BusinessKey da Cotação Financeira vinculada",
+      "name": "quotationBusinessKey",
+      "type": "string"
+    },
+    {
+      "doc": "Matrícula",
+      "name": "programEnrollment",
+      "type": {
+        "doc": "Estrutura do Objeto de Matrícula",
+        "fields": [
+          {
+            "doc": "Chave de Negócio da Matricula (RA) do Contato de um aluno no Curso",
+            "name": "businessKey",
+            "type": "string"
+          }
+        ],
+        "name": "programEnrollment_FinancialContractActivatedProcessed",
+        "type": "record"
+      }
+    },
+    {
+      "doc": "BusinessKey do Aluno (CPF)",
+      "name": "studentContact",
+      "type": {
+        "fields": [
+          {
+            "doc": "Chave de negócio do contato",
+            "name": "contactBusinessKey",
+            "type": "string"
+          },
+          {
+            "default": "BR_CPF",
+            "doc": "Tipo de chave de negócio do contato",
+            "name": "contactBusinessKeyType",
+            "type": {
+              "name": "contactBusinessKeyTypeFinancialContractActivatedProcessed",
+              "symbols": [
+                "BR_CPF"
+              ],
+              "type": "enum"
+            }
+          }
+        ],
+        "name": "studentContactFinancialContractActivatedProcessed",
+        "type": "record"
+      }
+    },
+    {
+      "doc": "ID do contrato financeiro (Max. 10)",
+      "name": "financialContractBusinessKey",
+      "type": "string"
+    },
+    {
+      "doc": "Id da conta contrato financeira (Max. 12)",
+      "name": "financialAccountContractBusinessKey",
+      "type": "string"
+    },
+    {
+      "doc": "Ciclo de Faturamento (Dia do vencimento da fatura)",
+      "name": "billingCycle",
+      "type": {
+        "name": "billingCycleFinancialContractActivatedProcessed",
+        "symbols": [
+          "_02_",
+          "_05_",
+          "_07_",
+          "_10_",
+          "_17_",
+          "_20_"
+        ],
+        "type": "enum"
+      }
+    },
+    {
+      "doc": "Timestamp da data de início das aulas/estudos",
+      "name": "termStartDate",
+      "type": {
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "connect.version": 1,
+        "logicalType": "timestamp-millis",
+        "type": "long"
+      }
+    }
+  ],
+  "name": "FinancialContractActivatedProcessedValue",
+  "namespace": "br.com.cogna",
+  "type": "record"
+}

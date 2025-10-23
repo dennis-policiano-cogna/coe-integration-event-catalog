@@ -1,29 +1,44 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: student-created-event
-  description: Evento disparado quando um estudante é criado no sistema acadêmico
+  name: Contrato Financeiro Ativado
+  topic: financial-contract-activated
+  description: Evento disparado quando um contrato financeiro é ativado
   tags:
     - kafka
     - asyncapi
 spec:
   type: asyncapi
   lifecycle: experimental
-  owner: backbone-team
-  definition:
-    $text: ./asyncapi/student-created.yaml
+  owner: coe-integracoes
+    definitions:
+    asyncapi:
+      $text: ./asyncapi/financial-contract-activated.yaml
+    schemas:
+      value:
+        $text: ./schemas/financial-contract-activated-value.json
+      key:
+        $text: ./schemas/financial-contract-activated-key.json
+
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: payment-processed-event
-  description: Evento que representa um pagamento processado pelo financeiro
+  name: Contrato Financeiro Ativado Processado
+  topic: financial-contract-activated-processed
+  description: Evento que representa o retorno do processamento da ativação de contrato financeiro
   tags:
     - kafka
     - asyncapi
 spec:
   type: asyncapi
   lifecycle: experimental
-  owner: backbone-team
-  definition:
-    $text: ./asyncapi/payment-processed.yaml
+  owner: coe-integracoes
+  definitions:
+    asyncapi:
+      $text: ./asyncapi/financial-contract-activated-processed.yaml
+    schemas:
+      value:
+        $text: ./schemas/financial-contract-activated-processed-value.json
+      key:
+        $text: ./schemas/financial-contract-activated-processed-key.json
