@@ -26,7 +26,7 @@ kind: API
 metadata:
   name: Contrato Financeiro Ativado Processado
   topic: financial-contract-activated-processed
-  description: Evento que representa o retorno do processamento da ativação de contrato financeiro
+  description: Evento que representa o retorno do processamento da ativação de contrato financeiro.
   tags:
     - kafka
     - asyncapi
