@@ -5,7 +5,7 @@ metadata:
   name: financial-contract-activated
   description: Evento emitido para solicitação da ativação de um contrato financeiro.
 spec:
-  type: openapi
+  type: asyncapi
   lifecycle: experimental
   owner: group:backbone
   system: backbone
