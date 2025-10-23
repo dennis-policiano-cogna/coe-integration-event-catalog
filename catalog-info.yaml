@@ -10,4 +10,4 @@ spec:
   owner: group:backbone
   system: backbone
   definition: |
-    $text: ./asyncapi/financial-contract-activated.yaml
+    $text: https://raw.githubusercontent.com/dennis-policiano-cogna/coe-integration-event-catalog/master/asyncapi/financial-contract-activated.yaml
