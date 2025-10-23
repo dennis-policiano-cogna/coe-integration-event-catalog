@@ -1,4 +1,4 @@
-asyncapi: 2.4.0
+asyncapi: '2.4.0'
 info:
   title: API Document for Confluent Cluster
   version: 1.0.0
