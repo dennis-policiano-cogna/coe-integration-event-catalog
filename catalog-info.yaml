@@ -10,4 +10,4 @@ spec:
   owner: group:backbone
   system: backbone
   definition: |
-    $asyncapi: ./asyncapi/financial-contract-activated.yaml
+    $text: ./asyncapi/financial-contract-activated.yaml
