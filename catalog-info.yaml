@@ -12,13 +12,12 @@ spec:
   lifecycle: experimental
   owner: coe-integracoes
   definition:
-    asyncapi:
-      $text: ./asyncapi/financial-contract-activated.yaml
-    schemas:
-      value:
-        $text: ./schemas/financial-contract-activated-value.avsc
-      key:
-        $text: ./schemas/financial-contract-activated-key.avsc
+    $text: ./asyncapi/financial-contract-activated.yaml
+  x-avro:
+    value:
+      $text: ./schemas/financial-contract-activated-value.avsc
+    key:
+      $text: ./schemas/financial-contract-activated-key.avsc
 
 ---
 apiVersion: backstage.io/v1alpha1
