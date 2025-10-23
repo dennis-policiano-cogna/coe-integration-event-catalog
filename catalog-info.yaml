@@ -1,0 +1,13 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: financial-contract-activated
+  description: Evento emitido para solicitação da ativação de um contrato financeiro.
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:backbone
+  system: backbone
+  definition: |
+    $asyncapi: ./asyncapi/financial-contract-activated.yaml

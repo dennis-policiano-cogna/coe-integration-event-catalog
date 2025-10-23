@@ -1,0 +1,317 @@
+asyncapi: 2.4.0
+info:
+  title: API Document for Confluent Cluster
+  version: 1.0.0
+servers:
+  cluster:
+    url: https://pkc-ygz96.eastus.azure.confluent.cloud:443
+    description: Confluent Kafka instance.
+    protocol: kafka
+    security:
+    - confluentBroker: []
+  schema-registry:
+    url: https://psrc-6zww3.us-east-2.aws.confluent.cloud
+    description: Confluent Kafka Schema Registry Server
+    protocol: kafka
+    security:
+    - confluentSchemaRegistry: []
+channels:
+  financial-contract-activated:
+    description: <nil>
+    subscribe:
+      tags:
+      - name: ARTPT_500
+      operationId: FinancialContractActivatedSubscribe
+      bindings:
+        kafka:
+          bindingVersion: 0.3.0
+          groupId:
+            type: string
+          clientId:
+            type: string
+      message:
+        $ref: '#/components/messages/FinancialContractActivatedMessage'
+    bindings:
+      kafka:
+        bindingVersion: 0.4.0
+        partitions: 3
+        topicConfiguration:
+          cleanup.policy:
+          - delete
+          retention.ms: 6.048e+08
+          retention.bytes: -1
+          delete.retention.ms: 8.64e+07
+          max.message.bytes: 2.097152e+07
+        x-configs:
+          compression.gzip.level: "-1"
+          compression.lz4.level: "9"
+          compression.type: producer
+          compression.zstd.level: "3"
+          confluent.key.schema.validation: "true"
+          confluent.key.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicNameStrategy
+          confluent.schema.validation.context.name: default
+          confluent.value.schema.validation: "true"
+          confluent.value.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicNameStrategy
+          file.delete.delay.ms: "60000"
+          flush.messages: "9223372036854775807"
+          flush.ms: "9223372036854775807"
+          follower.replication.throttled.replicas: ""
+          index.interval.bytes: "4096"
+          leader.replication.throttled.replicas: ""
+          local.retention.bytes: "-2"
+          local.retention.ms: "-2"
+          max.compaction.lag.ms: "9223372036854775807"
+          message.downconversion.enable: "true"
+          message.timestamp.after.max.ms: "9223372036854775807"
+          message.timestamp.before.max.ms: "9223372036854775807"
+          message.timestamp.difference.max.ms: "9223372036854775807"
+          message.timestamp.type: CreateTime
+          min.cleanable.dirty.ratio: "0.5"
+          min.compaction.lag.ms: "0"
+          min.insync.replicas: "2"
+          preallocate: "false"
+          remote.log.copy.disable: "false"
+          remote.log.delete.on.disable: "false"
+          remote.storage.enable: "false"
+          segment.bytes: "104857600"
+          segment.index.bytes: "10485760"
+          segment.jitter.ms: "0"
+          segment.ms: "604800000"
+          unclean.leader.election.enable: "false"
+    x-messageCompatibility: FULL_TRANSITIVE
+  financial-contract-activated-processed:
+    description: <nil>
+    subscribe:
+      tags:
+      - name: ARTPT_588
+      - name: ARTPT_578
+      operationId: FinancialContractActivatedProcessedSubscribe
+      bindings:
+        kafka:
+          bindingVersion: 0.3.0
+          groupId:
+            type: string
+          clientId:
+            type: string
+      message:
+        $ref: '#/components/messages/FinancialContractActivatedProcessedMessage'
+    bindings:
+      kafka:
+        bindingVersion: 0.4.0
+        partitions: 3
+        topicConfiguration:
+          cleanup.policy:
+          - delete
+          retention.ms: 6.048e+08
+          retention.bytes: -1
+          delete.retention.ms: 8.64e+07
+          max.message.bytes: 2.097152e+07
+        x-configs:
+          compression.gzip.level: "-1"
+          compression.lz4.level: "9"
+          compression.type: producer
+          compression.zstd.level: "3"
+          confluent.key.schema.validation: "true"
+          confluent.key.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicNameStrategy
+          confluent.schema.validation.context.name: default
+          confluent.value.schema.validation: "true"
+          confluent.value.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicNameStrategy
+          file.delete.delay.ms: "60000"
+          flush.messages: "9223372036854775807"
+          flush.ms: "9223372036854775807"
+          follower.replication.throttled.replicas: ""
+          index.interval.bytes: "4096"
+          leader.replication.throttled.replicas: ""
+          local.retention.bytes: "-2"
+          local.retention.ms: "-2"
+          max.compaction.lag.ms: "9223372036854775807"
+          message.downconversion.enable: "true"
+          message.timestamp.after.max.ms: "9223372036854775807"
+          message.timestamp.before.max.ms: "9223372036854775807"
+          message.timestamp.difference.max.ms: "9223372036854775807"
+          message.timestamp.type: CreateTime
+          min.cleanable.dirty.ratio: "0.5"
+          min.compaction.lag.ms: "0"
+          min.insync.replicas: "2"
+          preallocate: "false"
+          remote.log.copy.disable: "false"
+          remote.log.delete.on.disable: "false"
+          remote.storage.enable: "false"
+          segment.bytes: "104857600"
+          segment.index.bytes: "10485760"
+          segment.jitter.ms: "0"
+          segment.ms: "604800000"
+          unclean.leader.election.enable: "false"
+    x-messageCompatibility: FULL_TRANSITIVE
+components:
+  messages:
+    FinancialContractActivatedMessage:
+      schemaFormat: application/vnd.apache.avro;version=1.9.0
+      contentType: application/avro
+      payload:
+        connect.name: br.com.cogna.FinancialContractActivatedValue
+        doc: '{"description": "Este evento representa o retorno do Gestor de Ativação
+          após validação dos dados de pagamento para efetivação da ativação de contrato
+          financeiro.","topic":"financial-contract-activated","author_team":"Backbone","author_name":"Dennis
+          Policiano","support_email":"integracoes.sistemas@cogna.com.br","support_name":"Backbone"}'
+        fields:
+        - doc: Sistema de origem
+          name: system
+          type: string
+        - doc: Matrícula
+          name: programEnrollment
+          type:
+            doc: Estrutura do Objeto de Matrícula
+            fields:
+            - doc: Chave de negócio da matrícula (RA) do contato de um aluno no curso
+              name: businessKey
+              type: string
+            name: programEnrollment_FinancialContractActivated
+            type: record
+        - doc: BusinessKey do Aluno (CPF)
+          name: studentContact
+          type:
+            fields:
+            - doc: Chave de negócio do contato
+              name: contactBusinessKey
+              type: string
+            - default: BR_CPF
+              doc: Tipo de chave de negócio do contato
+              name: contactBusinessKeyType
+              type:
+                name: contactBusinessKeyTypeFinancialContractActivated
+                symbols:
+                - BR_CPF
+                type: enum
+            name: studentContactFinancialContractActivated
+            type: record
+        - doc: Duração em meses
+          name: duration
+          type: int
+        - default: null
+          doc: Quantidades de mensalidades a serem faturadas por matrícula tardia
+          name: installmentsToBill
+          type:
+          - "null"
+          - int
+        - doc: 'Tipo de Operação - Enum: ''CRIACAO'', ''TRANSFERENCIA_INTERNA'''
+          name: type
+          type:
+            name: type_FinancialContractActivated
+            symbols:
+            - CRIACAO
+            - TRANSFERENCIA_INTERNA
+            type: enum
+        - doc: BusinessKey da Cotação Financeira vinculada
+          name: quotationBusinessKey
+          type: string
+        - doc: Unix epoch da data e hora de início das aulas/estudos
+          name: termStartDate
+          type:
+            connect.name: org.apache.kafka.connect.data.Timestamp
+            connect.version: 1
+            logicalType: timestamp-millis
+            type: long
+        - default: null
+          doc: Quantidade de mensalidades isentas
+          name: exemptEnrollmentInstallments
+          type:
+          - "null"
+          - int
+        name: FinancialContractActivatedValue
+        namespace: br.com.cogna
+        type: record
+      name: FinancialContractActivatedMessage
+      bindings:
+        kafka:
+          bindingVersion: 0.3.0
+          key:
+            type: string
+    FinancialContractActivatedProcessedMessage:
+      schemaFormat: application/vnd.apache.avro;version=1.9.0
+      contentType: application/avro
+      payload:
+        connect.name: br.com.cogna.FinancialContractActivatedProcessedValue
+        doc: '{"description": "Este evento representa o retorno do processamento da
+          ativação de contrato financeiro.","topic":"financial-contract-activated-processed","author_team":"Backbone","author_name":"Dennis
+          Policiano","support_email":"integracoes.sistemas@cogna.com.br","support_name":"Backbone"}'
+        fields:
+        - doc: Sistema de origem
+          name: system
+          type: string
+        - doc: BusinessKey da Cotação Financeira vinculada
+          name: quotationBusinessKey
+          type: string
+        - doc: Matrícula
+          name: programEnrollment
+          type:
+            doc: Estrutura do Objeto de Matrícula
+            fields:
+            - doc: Chave de Negócio da Matricula (RA) do Contato de um aluno no Curso
+              name: businessKey
+              type: string
+            name: programEnrollment_FinancialContractActivatedProcessed
+            type: record
+        - doc: BusinessKey do Aluno (CPF)
+          name: studentContact
+          type:
+            fields:
+            - doc: Chave de negócio do contato
+              name: contactBusinessKey
+              type: string
+            - default: BR_CPF
+              doc: Tipo de chave de negócio do contato
+              name: contactBusinessKeyType
+              type:
+                name: contactBusinessKeyTypeFinancialContractActivatedProcessed
+                symbols:
+                - BR_CPF
+                type: enum
+            name: studentContactFinancialContractActivatedProcessed
+            type: record
+        - doc: ID do contrato financeiro (Max. 10)
+          name: financialContractBusinessKey
+          type: string
+        - doc: Id da conta contrato financeira (Max. 12)
+          name: financialAccountContractBusinessKey
+          type: string
+        - doc: Ciclo de Faturamento (Dia do vencimento da fatura)
+          name: billingCycle
+          type:
+            name: billingCycleFinancialContractActivatedProcessed
+            symbols:
+            - _02_
+            - _05_
+            - _07_
+            - _10_
+            - _17_
+            - _20_
+            type: enum
+        - doc: Timestamp da data de início das aulas/estudos
+          name: termStartDate
+          type:
+            connect.name: org.apache.kafka.connect.data.Timestamp
+            connect.version: 1
+            logicalType: timestamp-millis
+            type: long
+        name: FinancialContractActivatedProcessedValue
+        namespace: br.com.cogna
+        type: record
+      name: FinancialContractActivatedProcessedMessage
+      bindings:
+        kafka:
+          bindingVersion: 0.3.0
+          key:
+            type: string
+  securitySchemes:
+    confluentBroker:
+      type: userPassword
+      x-configs:
+        sasl.mechanisms: PLAIN
+        sasl.password: '{{CLUSTER_API_SECRET}}'
+        sasl.username: '{{CLUSTER_API_KEY}}'
+        security.protocol: sasl_ssl
+    confluentSchemaRegistry:
+      type: userPassword
+      x-configs:
+        basic.auth.user.info: '{{SCHEMA_REGISTRY_API_KEY}}:{{SCHEMA_REGISTRY_API_SECRET}}'
