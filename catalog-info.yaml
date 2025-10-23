@@ -9,5 +9,5 @@ spec:
   lifecycle: experimental
   owner: group:backbone
   system: backbone
-  definition: |
-    $text: https://raw.githubusercontent.com/dennis-policiano-cogna/coe-integration-event-catalog/master/asyncapi/financial-contract-activated.yaml
+  definition:
+    $text: https://raw.githubusercontent.com/dennis-policiano-cogna/coe-integration-event-catalog/refs/heads/master/catalog-info.yaml
