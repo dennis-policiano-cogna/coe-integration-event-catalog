@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: Contrato Financeiro Ativado
-  topic: financial-contract-activated
+  name: financial-contract-activated
+  event: Contrato Financeiro Ativado
   description: Evento disparado quando um contrato financeiro é ativado
   tags:
     - kafka
@@ -24,8 +24,8 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: Contrato Financeiro Ativado Processado
-  topic: financial-contract-activated-processed
+  name: financial-contract-activated-processed
+  event: Contrato Financeiro Ativado Processado
   description: Evento que representa o retorno do processamento da ativação de contrato financeiro.
   tags:
     - kafka
