@@ -95,4 +95,4 @@ spec:
   system: backbone
   owner: group:default/coe-integracoes
   definition:
-    $text: ./asyncapi/financial-contract-activated.yaml
+    $text: ../../../asyncapi/financial-contract-activated.yaml
