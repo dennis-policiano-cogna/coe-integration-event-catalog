@@ -47,6 +47,7 @@ spec:
   lifecycle: experimental
   system: backbone
   owner: group:default/coe-integracoes
+  subcomponentOf: resource:default/kafka-topic-saber-student-parent-notification
   definition:
     $text: ./saber-student-parent-notification-key.avsc
 
@@ -72,6 +73,7 @@ spec:
   lifecycle: experimental
   system: backbone
   owner: group:default/coe-integracoes
+  subcomponentOf: resource:default/kafka-topic-saber-student-parent-notification
   definition:
     $text: ./saber-student-parent-notification-value.avsc
 
@@ -94,5 +96,6 @@ spec:
   lifecycle: experimental
   system: backbone
   owner: group:default/coe-integracoes
+  subcomponentOf: resource:default/kafka-topic-saber-student-parent-notification
   definition:
     $text: ../../../asyncapi/financial-contract-activated.yaml
