@@ -12,7 +12,7 @@ spec:
   lifecycle: experimental
   owner: coe-integracoes
   definition:
-    $text: ./asyncapi/financial-contract-activated.yaml
+    $text: ../asyncapi/financial-contract-activated.yaml
   x-avro:
     value:
       $text: ./schemas/financial-contract-activated-value.avsc
