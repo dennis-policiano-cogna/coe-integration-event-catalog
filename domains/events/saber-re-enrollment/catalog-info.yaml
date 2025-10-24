@@ -1,0 +1,100 @@
+# Resource: tópico Kafka
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kafka-topic-saber-re-enrollment
+  description: Tópico Kafka para evento de rematrícula processada
+  tags:
+    - kafka
+  links:
+    - url: mailto:integracao.sistemas@empresa.com.br
+      title: Suporte (Email)
+      icon: email
+    - url: https://confluent.cloud/environments/env-6woz8/clusters/lkc-m3dz7/topics/saber-re-enrollment
+      title: Kafka Topic (Confluent)
+      icon: web
+    - url: https://confluent.cloud/environments/env-6woz8/clusters/lkc-m3dz7/topics/saber-re-enrollment
+      title: Metrics (Datadog)
+      icon: dashboard
+spec:
+  type: kafka-topic
+  owner: group:default/coe-integracoes
+  system: backbone
+  providesApis:
+    - api:default/saber-re-enrollment-avro-key
+    - api:default/saber-re-enrollment-avro-value
+    - api:default/saber-re-enrollment-asyncapi
+
+---
+
+---
+
+# API: Schema Avro - Key
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: saber-re-enrollment-avro-key
+  description: Schema Avro do evento de rematrícula processada
+  tags:
+    - avro
+  links:
+    - url: https://confluent.cloud/environments/env-6woz8/clusters/lkc-m3dz7/topics/saber-re-enrollment
+      title: Avro Schema (GitHub)
+      icon: github
+    - url: https://confluent.cloud/environments/env-6woz8/stream-governance/schema-registry/data-contracts/saber-re-enrollment-key
+      title: Schema Registry
+      icon: docs
+spec:
+  type: avro
+  lifecycle: experimental
+  system: backbone
+  owner: group:default/coe-integracoes
+  definition:
+    $text: ./saber-re-enrollment-key.avsc
+
+---
+
+# API: Schema Avro - Value
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: saber-re-enrollment-avro-value
+  description: Schema Avro do evento de rematrícula processada
+  tags:
+    - avro
+  links:
+    - url: https://github.com/org/repo/blob/main/schemas/saber-re-enrollment-value.avsc
+      title: Avro Schema (GitHub)
+      icon: github
+    - url: https://confluent.cloud/environments/env-6woz8/stream-governance/schema-registry/data-contracts/saber-re-enrollment-value
+      title: Schema Registry
+      icon: docs
+spec:
+  type: avro
+  lifecycle: experimental
+  system: backbone
+  owner: group:default/coe-integracoes
+  definition:
+    $text: ./saber-re-enrollment-value.avsc
+
+---
+
+# API: AsyncAPI
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: saber-re-enrollment-asyncapi
+  description: Especificação AsyncAPI para o evento de rematrícula processada
+  tags:
+    - asyncapi
+  links:
+    - url: https://github.com/dennis-policiano-cogna/coe-integration-event-catalog/blob/master/asyncapi/financial-contract-activated.yaml
+      title: AsyncAPI (GitHub)
+      icon: docs
+spec:
+  type: asyncapi
+  lifecycle: experimental
+  system: backbone
+  owner: group:default/coe-integracoes
+  definition:
+    $text: ./asyncapi/financial-contract-activated.yaml

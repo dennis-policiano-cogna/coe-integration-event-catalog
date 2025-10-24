@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "SaberReEnrollmentValue",
+  "namespace": "br.com.saber",
+  "doc": "{\"description\":\"Evento de rematrícula processada no sistema Red Balloon da Saber\",\"topic\":\"saber-re-enrollment\",\"author_team\":\"Backbone\",\"author_name\":\"Dennis Policiano\",\"support_name\":\"Backbone\",\"support_email\":\"integracoes.sistemas@cogna.com.br\",\"schema_context\":\"br.com.saber\"}",
+  "fields": [
+    {
+      "name": "system",
+      "type": "string",
+      "doc": "Sistema de origem"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Identificador de referência do documento gerado"
+    }
+  ],
+  "connect.name": "br.com.saber.SaberReEnrollmentValue"
+}

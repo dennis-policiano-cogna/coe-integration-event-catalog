@@ -1,0 +1,24 @@
+{
+  "type": "record",
+  "name": "SaberReEnrollmentPaymentMethodAvailableValue",
+  "namespace": "br.com.saber",
+  "doc": "{\"description\":\"Este evento representa a disponibilização de um boleto para rematricula.\",\"topic\":\"saber-re-enrollment-payment-method-available\",\"author_team\":\"Backbone\",\"author_name\":\"Cleber Marcos\",\"author_email\":\"integracoes.sistemas@cogna.com.br\",\"support_name\":\"Backbone\"}",
+  "fields": [
+    {
+      "name": "system",
+      "type": "string",
+      "doc": "Identificador do sistema que produziu o evento"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Id de referencia do boleto gerado"
+    },
+    {
+      "name": "financiallyResponsiblePartyId",
+      "type": "string",
+      "doc": "Id do responsavel financeiro fiador do aluno"
+    }
+  ],
+  "connect.name": "br.com.saber.SaberReEnrollmentPaymentMethodAvailableValue"
+}

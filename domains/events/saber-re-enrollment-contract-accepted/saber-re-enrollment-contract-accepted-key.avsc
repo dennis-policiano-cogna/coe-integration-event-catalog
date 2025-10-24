@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "SaberReEnrollmentContractAcceptedKey",
+  "namespace": "br.com.saber",
+  "doc": "{\"description\":\"Este evento representa o aceite de um contrato de rematricula.\",\"topic\":\"saber-re-enrollment-contract-accepted\",\"author_team\":\"Backbone\",\"author_name\":\"Cleber Marcos\",\"author_email\":\"integracoes.sistemas@cogna.com.br\",\"support_name\":\"Backbone\"}",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Identificador único do evento"
+    }
+  ],
+  "connect.name": "br.com.saber.SaberReEnrollmentContractAcceptedKey"
+}

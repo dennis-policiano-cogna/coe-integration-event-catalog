@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "SaberReEnrollmentKey",
+  "namespace": "br.com.saber",
+  "doc": "{\"description\":\"Chave do evento de rematrícula processada no sistema Red Balloon da Saber\",\"topic\":\"saber-re-enrollment\",\"author_team\":\"Backbone\",\"author_name\":\"Dennis Policiano\",\"support_name\":\"Backbone\",\"support_email\":\"integracoes.sistemas@cogna.com.br\",\"schema_context\":\"br.com.saber\"}",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Identificador único evento"
+    }
+  ],
+  "connect.name": "br.com.saber.SaberReEnrollmentKey"
+}

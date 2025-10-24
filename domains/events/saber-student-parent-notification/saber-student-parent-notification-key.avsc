@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "SaberStudentParentNotificationKey",
+  "namespace": "br.com.cogna",
+  "doc": "{\"description\":\"Este evento representa a notificação ao responsavel do aluno para saber(red ballon).\",\"topic\":\"saber-student-parent-notification\",\"author_team\":\"Backbone\",\"author_name\":\"João Pedro Martins Watson\",\"support_team\":\"Backbone\"\"support_email\":\"integracao.sistemas@cogna.com.br\"}",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Identificador único do evento"
+    }
+  ],
+  "connect.name": "br.com.cogna.SaberStudentParentNotificationKey"
+}

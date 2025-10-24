@@ -1,0 +1,200 @@
+{
+  "type": "record",
+  "name": "SaberStudentParentNotificationValue",
+  "namespace": "br.com.cogna",
+  "doc": "{\"description\":\"Este evento representa a notificação ao responsavel do aluno para saber(red ballon).\",\"topic\":\"saber-student-parent-notification\",\"author_team\":\"Backbone\",\"author_name\":\"João Pedro Martins Watson\",\"support_team\":\"Backbone\"\"support_email\":\"integracao.sistemas@cogna.com.br\"}",
+  "fields": [
+    {
+      "name": "system",
+      "type": "string",
+      "doc": "Identificador único do sistema produtor do evento"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Identificador unido do evento"
+    },
+    {
+      "name": "stage",
+      "type": "string",
+      "doc": "Estagio"
+    },
+    {
+      "name": "ownerId",
+      "type": "string",
+      "doc": "Id do dono"
+    },
+    {
+      "name": "filter",
+      "type": "string",
+      "doc": "Filtro"
+    },
+    {
+      "name": "readBy",
+      "type": "int",
+      "doc": "Pronto em"
+    },
+    {
+      "name": "sentTo",
+      "type": "int",
+      "doc": "Enviado para"
+    },
+    {
+      "name": "sendAt",
+      "type": {
+        "type": "long",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Timestamp do envio"
+    },
+    {
+      "name": "values",
+      "type": {
+        "type": "record",
+        "name": "values_SaberStudentParentNotification",
+        "doc": "Estrutura do objeto de imagem enviada",
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "doc": "Titulo"
+          },
+          {
+            "name": "text",
+            "type": "string",
+            "doc": "Corpo do texto"
+          },
+          {
+            "name": "imageUrl",
+            "type": "string",
+            "doc": "URL da imagem"
+          }
+        ]
+      },
+      "doc": "Imagem enviada"
+    },
+    {
+      "name": "preFilter",
+      "type": {
+        "type": "record",
+        "name": "preFilter_SaberStudentParentNotification",
+        "doc": "Estrutura do objeto de pré filtro",
+        "fields": [
+          {
+            "name": "unit",
+            "type": {
+              "type": "record",
+              "name": "preFilter_unit_SaberStudentParentNotification",
+              "doc": "Estrutura do objeto de unidade",
+              "fields": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "doc": "Id da unidade"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "doc": "Nome da unidade"
+                }
+              ]
+            },
+            "doc": "Unidade"
+          },
+          {
+            "name": "allUnit",
+            "type": "boolean",
+            "doc": "Marcador todas unidades"
+          },
+          {
+            "name": "disableUpload",
+            "type": "boolean",
+            "doc": "Marcador desabilitar upload"
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "doc": "Categoria"
+          },
+          {
+            "name": "classes",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "record",
+                "name": "preFilter_classes_ServiceApplicantRequested",
+                "doc": "Estrutura do Objeto da Lista de classe",
+                "fields": [
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "doc": "Nome"
+                  },
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "doc": "Identificador"
+                  }
+                ]
+              }
+            },
+            "doc": "Classe"
+          },
+          {
+            "name": "dateDraft",
+            "type": {
+              "type": "long",
+              "connect.version": 1,
+              "connect.name": "org.apache.kafka.connect.data.Timestamp",
+              "logicalType": "timestamp-millis"
+            },
+            "doc": "Timestamp"
+          },
+          {
+            "name": "students",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "record",
+                "name": "preFilter_students_ServiceApplicantRequested",
+                "doc": "Estrutura do Objeto da Lista de estudantes",
+                "fields": [
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "doc": "Nome"
+                  },
+                  {
+                    "name": "id",
+                    "type": "string",
+                    "doc": "Identificador"
+                  }
+                ]
+              }
+            },
+            "doc": "Estudantes"
+          },
+          {
+            "name": "year",
+            "type": "int",
+            "doc": "Ano"
+          },
+          {
+            "name": "datePublished",
+            "type": {
+              "type": "long",
+              "connect.version": 1,
+              "connect.name": "org.apache.kafka.connect.data.Timestamp",
+              "logicalType": "timestamp-millis"
+            },
+            "doc": "Data de publicação"
+          }
+        ]
+      },
+      "doc": "Pré filtro"
+    }
+  ],
+  "connect.name": "br.com.cogna.SaberStudentParentNotificationValue"
+}
