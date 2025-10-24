@@ -10,7 +10,7 @@ spec:
     email: integracao.sistemas@cognna.com.br
   children: []
   members:
-    - user:default:dennis-policiano-cogna
+    - user:default/dennis-policiano-cogna
 
 --- 
 apiVersion: backstage.io/v1alpha1
@@ -22,4 +22,4 @@ spec:
     displayName: Dennis Policiano
     email: dennis.policiano@cogna.com
   memberOf: 
-    - group:default:coe-integracoes 
+    - group:default/coe-integracoes 
