@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: financial-contract-activated
+  x-event: Contrato Financeiro Ativado
+  description: Evento disparado quando um contrato financeiro é ativado
+  tags:
+    - kafka
+    - asyncapi
+spec:
+  type: asyncapi
+  lifecycle: experimental
+  owner: coe-integracoes
+  definition:
+    $text: ./asyncapi/financial-contract-activated.yaml
+  x-avro:
+    value:
+      $text: ./schemas/financial-contract-activated-value.avsc
+    key:
+      $text: ./schemas/financial-contract-activated-key.avsc
