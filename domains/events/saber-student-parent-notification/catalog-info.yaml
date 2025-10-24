@@ -1,0 +1,98 @@
+# Resource: tópico Kafka
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kafka-topic-saber-student-parent-notification
+  description: Tópico Kafka para evento de rematrícula processada
+  tags:
+    - kafka
+  links:
+    - url: mailto:integracao.sistemas@empresa.com.br
+      title: Suporte (Email)
+      icon: email
+    - url: https://confluent.cloud/environments/env-6woz8/clusters/lkc-m3dz7/topics/saber-student-parent-notification
+      title: Kafka Topic (Confluent)
+      icon: web
+    - url: https://confluent.cloud/environments/env-6woz8/clusters/lkc-m3dz7/topics/saber-student-parent-notification
+      title: Metrics (Datadog)
+      icon: dashboard
+spec:
+  type: kafka-topic
+  owner: group:default/coe-integracoes
+  system: backbone
+  providesApis:
+    - api:default/saber-student-parent-notification-avro-key
+    - api:default/saber-student-parent-notification-avro-value
+    - api:default/saber-student-parent-notification-asyncapi
+
+---
+
+# API: Schema Avro - Key
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: saber-student-parent-notification-avro-key
+  description: Schema Avro do evento de rematrícula processada
+  tags:
+    - avro
+  links:
+    - url: https://confluent.cloud/environments/env-6woz8/clusters/lkc-m3dz7/topics/saber-student-parent-notification
+      title: Avro Schema (GitHub)
+      icon: github
+    - url: https://confluent.cloud/environments/env-6woz8/stream-governance/schema-registry/data-contracts/saber-student-parent-notification-key
+      title: Schema Registry
+      icon: docs
+spec:
+  type: avro
+  lifecycle: experimental
+  system: backbone
+  owner: group:default/coe-integracoes
+  definition:
+    $text: ./saber-student-parent-notification-key.avsc
+
+---
+
+# API: Schema Avro - Value
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: saber-student-parent-notification-avro-value
+  description: Schema Avro do evento de rematrícula processada
+  tags:
+    - avro
+  links:
+    - url: https://github.com/org/repo/blob/main/schemas/saber-student-parent-notification-value.avsc
+      title: Avro Schema (GitHub)
+      icon: github
+    - url: https://confluent.cloud/environments/env-6woz8/stream-governance/schema-registry/data-contracts/saber-student-parent-notification-value
+      title: Schema Registry
+      icon: docs
+spec:
+  type: avro
+  lifecycle: experimental
+  system: backbone
+  owner: group:default/coe-integracoes
+  definition:
+    $text: ./saber-student-parent-notification-value.avsc
+
+---
+
+# API: AsyncAPI
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: saber-student-parent-notification-asyncapi
+  description: Especificação AsyncAPI para o evento de rematrícula processada
+  tags:
+    - asyncapi
+  links:
+    - url: https://github.com/dennis-policiano-cogna/coe-integration-event-catalog/blob/master/asyncapi/financial-contract-activated.yaml
+      title: AsyncAPI (GitHub)
+      icon: docs
+spec:
+  type: asyncapi
+  lifecycle: experimental
+  system: backbone
+  owner: group:default/coe-integracoes
+  definition:
+    $text: ../../../asyncapi/financial-contract-activated.yaml
